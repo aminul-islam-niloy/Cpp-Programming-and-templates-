@@ -6,7 +6,7 @@ int marks;
 cout<< " Enter marks:  ";
 cin>> marks;
 
-switch (marks/10){
+switch (marks/810){
    
    case 10: cout<<" Your grade is A+ ";
             break;

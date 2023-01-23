@@ -18,12 +18,10 @@ using namespace std;
     // cout<<"Factorial is: "<<fact<<endl;
 
 int main(){
-    int num,facto;
+    int num,facto=1;
     cin >>num;
-       facto=num;
 
-   
- for(int i=num-1; i>0; i--){
+ for(int i=1; i<=num; i++){
     facto=facto*i;
     
  }
