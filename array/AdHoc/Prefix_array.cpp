@@ -5,7 +5,8 @@ using namespace std;
 
 //prefix sum 
 
-void prefix_sum(int arr[], int n){
+void prefix_sum(int arr[], int n)
+{
    int sum[n+1];
 
 //first index in same
