@@ -1,4 +1,3 @@
-//c++ program for  next permotation
 
 #include<bits/stdc++.h>
 using namespace std;
