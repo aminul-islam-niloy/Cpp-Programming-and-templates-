@@ -16,10 +16,10 @@ int main(){
     }
 
     if(n==rev){
-        cout<<"P";
+        cout<<"true";
 
     }
     else
-    cout<<"Not";
+    cout<<"false";
    
 }
