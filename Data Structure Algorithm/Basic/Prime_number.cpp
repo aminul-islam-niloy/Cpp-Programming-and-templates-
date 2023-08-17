@@ -1,4 +1,5 @@
 #include <iostream>
+using namespace std;
 
 bool isPrime(int number) {
     if (number <= 1)
@@ -13,17 +14,23 @@ bool isPrime(int number) {
 }
 
 int main() {
+
+   #ifndef ONLINE
+       freopen("input.txt", "r",stdin);
+       freopen("output.txt","w",stdout);
+    #endif
+
     int num , total;
-    std::cout << "Enter a total number: ";
-    std::cin >> total;
+    //  cout << "Enter a total number: ";
+     cin >> total;
     
 
 for(int i=0; i<=total; i++)
 {
         if (isPrime(i))
          {
-        std::cout << i  << std::endl;
-    } 
+         cout << i  << endl;
+         } 
     
 }
     
