@@ -19,8 +19,10 @@ int main() {
 
     if (decimalNumber == 0) {
         binary.push_back(0);
-    } else {
-        while (decimalNumber > 0) {
+    }
+     else {
+        while (decimalNumber > 0) 
+        {
             binary.push_back(decimalNumber % 2);
             decimalNumber /= 2;
         }
