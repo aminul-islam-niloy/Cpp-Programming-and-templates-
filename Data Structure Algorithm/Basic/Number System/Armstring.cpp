@@ -17,23 +17,18 @@ int main()
     int result= num;
 
     while(num>0)
-    {
-       int last= num%10; 
-       arm += pow(last,size);
-       num= num/10;
-     
-      
-    }
-   if(arm==result){
-    cout<<"Armstrong";
-   }
-   else{
-    cout<<"not armstrong";
-   }
-  
-
-   
-   
-
+        {
+            int last= num%10; 
+            arm += pow(last,size);
+            num= num/10;
+        }
+            if(arm==result)
+                {
+                    cout<<"Armstrong";
+                }
+                else
+                    {
+                        cout<<"not armstrong";
+                    }
 
 }
