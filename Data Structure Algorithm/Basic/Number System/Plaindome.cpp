@@ -17,7 +17,6 @@ int main(){
         int last= n%10;
         rev= rev*10+last;
         n=n/10;
-       
     }
 
     if(result==rev){
