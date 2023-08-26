@@ -1,1 +1,1 @@
-Not a palindrome number
+sum is 465
