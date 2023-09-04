@@ -26,6 +26,52 @@ int SelectionSort(int arr[],int n)
 
 }
 
+    int BubbleSort(int arr[], int n)
+    {
+        int count=1;
+        while(count<n)
+        {
+        for(int i=0; i<n-count; i++)
+        {
+          if(arr[i]> arr[i+1])
+          {
+            int temp= arr[i];
+            arr[i]= arr[i+1];
+            arr[i+1]= temp;
+          }  
+        }
+        count++;
+        }
+            // Print the array
+             for(int i=0; i<n; i++)
+             {
+                 cout<<arr[i]<<" ";
+             }
+    }
+
+    int insertionSort(int arr[],int  n)
+    {
+        for(int i=1; i<n; i++)
+        {
+            int currrent= arr[i];
+            int j= i-1;
+
+            while(arr[j]>currrent && j>=0)
+            {
+                arr[j+1]= arr[j];
+                j--;
+
+            }
+            arr[j+1]=currrent;
+        }
+        
+           // Print the array
+             for(int i=0; i<n; i++)
+             {
+                 cout<<arr[i]<<" ";
+             }
+    }
+
 int main()
 { 
     #ifndef RUN
@@ -44,9 +90,9 @@ int main()
 
  
 
- // SelectionSort(array,n);
-
-   
+  //SelectionSort(array,n);
+  //BubbleSort(array,n);
+   insertionSort(array,n);
 
 
 
