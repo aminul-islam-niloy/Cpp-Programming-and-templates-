@@ -42,13 +42,34 @@ int ArrithmaticArray(int arr[], int n)
             pd = arr[j] - arr[j - 1];
             curr = 2;
         }
-        ans= max(ans,curr);
+        ans = max(ans, curr);
 
         j++;
     }
 
-    cout<<ans<<endl;
-    
+    cout << ans << endl;
+}
+
+int RecordBreaking(int a[], int n)
+{
+    if (n == 1)
+    {
+        cout << "1" << endl;
+        return 0;
+    }
+    int ans = 0;
+    int mx = -1;
+
+    for (int i = 0; i < n; i++)
+    {
+        if (a[i] > mx && a[i] > a[i + 1])
+        {
+            ans++;
+        }
+        mx = max(mx, a[i]);
+    }
+
+    cout << ans << endl;
 }
 
 int main()
@@ -60,13 +81,17 @@ int main()
 
     int n;
     cin >> n;
-    int array[n];
+     int array[n];
+
+    //int a[n + 1];
+   // a[n] = -1;
 
     for (int i = 0; i < n; i++)
     {
         cin >> array[i];
     }
 
-   // PrintAllSubarray(array, n);
-    ArrithmaticArray(array, n);
+    // PrintAllSubarray(array, n);
+    // ArrithmaticArray(array, n);
+    RecordBreaking(array, n);
 }
