@@ -21,12 +21,12 @@ int sumOfSubArray(int arr[], int n)
     sum = 0;
     for (int j = i; j < n; j++)
     {
-        sum += arr[j];
+      sum += arr[j];
       // cout << arr[i] << endl;
-      //cout << "value is : " << arr[j] << endl;
+      // cout << "value is : " << arr[j] << endl;
     }
-    
-     cout << "Sum is : " << sum << endl;
+
+    cout << "Sum is : " << sum << endl;
   }
 }
 
