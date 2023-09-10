@@ -72,6 +72,39 @@ int RecordBreaking(int a[], int n)
     cout << ans << endl;
 }
 
+int RepetingArrayproblem(int arr[], int n) // //O(n^2)
+{
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = i + 1; j < n; j++)
+        {
+            if (arr[i] == arr[j])
+            {
+                return i;
+            }
+        }
+    }
+    return -1;
+}
+
+int RepeteFirstElement(int arr[], int n) // O(n)
+{
+    int min = -1;
+    set<int> repElem;
+
+    for (int i = n - 1; i >= 0; i--)
+    {
+        if (repElem.find(arr[i]) != repElem.end())
+            return i;
+
+        else
+        {
+            repElem.insert(arr[i]);
+        }
+    }
+    return -1;
+}
+
 int main()
 {
 #ifndef RUN
@@ -81,10 +114,10 @@ int main()
 
     int n;
     cin >> n;
-     int array[n];
+    int array[n];
 
-    //int a[n + 1];
-   // a[n] = -1;
+    // int a[n + 1];
+    // a[n] = -1;
 
     for (int i = 0; i < n; i++)
     {
@@ -93,5 +126,16 @@ int main()
 
     // PrintAllSubarray(array, n);
     // ArrithmaticArray(array, n);
-    RecordBreaking(array, n);
+    // RecordBreaking(array, n);
+    // int index = RepetingArrayproblem(array, n);
+
+    int index = RepeteFirstElement(array, n);
+    if (index == -1)
+    {
+        cout << "No reapting ";
+    }
+    else
+    {
+        cout << "first repeting  " << array[index] << endl;
+    }
 }
