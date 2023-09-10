@@ -166,6 +166,33 @@ int sumOfSubArray(int arr[], int n, int s)
     cout << start << " " << en << endl;
 }
 
+int smallestPositiveMissing(int arr[], int n)
+{
+
+    // First, we place each positive integer in its correct position in the array.
+    // For example, if the number 3 is present, we swap it with nums[2].
+    for (int i = 0; i < n; i++)
+    {
+        while (arr[i] > 0 && arr[i] <= n &&
+               arr[i] != arr[arr[i] - 1])
+        {
+            swap(arr[i], arr[arr[i] - 1]);
+        }
+    }
+
+    // After rearranging, the first position where nums[i] != i + 1 is the missing positive integer.
+    for (int i = 0; i < n; i++)
+    {
+        if (arr[i] != i + 1)
+        {
+            return i + 1;
+        }
+    }
+
+    // If all positive integers from 1 to n are present, return n + 1.
+    return n + 1;
+}
+
 int main()
 {
 #ifndef RUN
@@ -201,5 +228,7 @@ int main()
     // }
 
     // SubarraySum(array, n, 12);
-    sumOfSubArray(array, n, 12);
+    // sumOfSubArray(array, n, 12);
+
+    cout << smallestPositiveMissing(array, n);
 }
