@@ -105,6 +105,67 @@ int RepeteFirstElement(int arr[], int n) // O(n)
     return -1;
 }
 
+int SubarraySum(int arr[], int n, int target)
+{
+    int sum = 0;
+    for (int i = 0; i < n; i++)
+    {
+        sum = 0;
+        for (int j = i; j < n; j++)
+        {
+            sum += arr[j];
+
+            // for (int k = j; k <= j; k++)
+            // {
+            //    // cout << arr[k] << " ";
+            // }
+        }
+        // cout << endl;
+        cout << "Sum is : " << sum << endl;
+    }
+}
+
+int sumOfSubArray(int arr[], int n, int s)
+{
+    // two pointer approch
+    int i = 0;
+    int j = 0;
+    int start = -1;
+    int en = -1;
+    int sum = 0;
+
+    while (j < n && sum + arr[j] <= s)
+    {
+        sum += arr[j];
+        j++;
+    }
+
+    if (sum == s)
+    {
+        cout << i + 1 << " " << j << endl;
+        return 0;
+    }
+
+    while (j < n)
+    {
+        sum += arr[j];
+        while (sum > s)
+        {
+            sum -= arr[i];
+            i++;
+        }
+        if (sum == s)
+        {
+            start = i + 1;
+            en = j + 1;
+            break;
+        }
+        j++;
+    }
+
+    cout << start << " " << en << endl;
+}
+
 int main()
 {
 #ifndef RUN
@@ -129,13 +190,16 @@ int main()
     // RecordBreaking(array, n);
     // int index = RepetingArrayproblem(array, n);
 
-    int index = RepeteFirstElement(array, n);
-    if (index == -1)
-    {
-        cout << "No reapting ";
-    }
-    else
-    {
-        cout << "first repeting  " << array[index] << endl;
-    }
+    // int index = RepeteFirstElement(array, n);
+    // if (index == -1)
+    // {
+    //     cout << "No reapting ";
+    // }
+    // else
+    // {
+    //     cout << "first repeting  " << array[index] << endl;
+    // }
+
+    // SubarraySum(array, n, 12);
+    sumOfSubArray(array, n, 12);
 }
