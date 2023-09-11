@@ -228,7 +228,7 @@ int main()
     // }
 
     // SubarraySum(array, n, 12);
-    // sumOfSubArray(array, n, 12);
+    // sumOfSubArray(array, n, 11);
 
     cout << smallestPositiveMissing(array, n);
 }
