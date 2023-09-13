@@ -72,8 +72,18 @@ void PossibleSubArray(int a[], int n)
     }
 }
 
-int ArrayPairSum(int arr, int n, int target)
+int ArrayPairSum(int arr[], int n, int target)
 {
+    for (int i = 0; i < n-1; i++)
+    {
+        for (int j =i+1; j < n; j++)
+        {
+            if (arr[i] + arr[j] == target)
+            {
+                cout << arr[i] << " " << arr[j]<<endl;
+            }
+        }
+    }
 }
 
 int main()
@@ -96,4 +106,5 @@ int main()
     // CumulativeSumOFMaximum(arr, n);
 
     // PossibleSubArray(arr, n);
+    ArrayPairSum(arr, n, 12);
 }
