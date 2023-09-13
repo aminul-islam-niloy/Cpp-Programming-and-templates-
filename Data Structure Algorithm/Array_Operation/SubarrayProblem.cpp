@@ -91,8 +91,9 @@ int ReduceTArrayPairSum(int arr[], int n, int target)
     int low = 0;
     int high = n - 1;
     int flag = 0;
-    for (int i = 0; i < n; i++)
+    while (low < high)
     {
+
         if (arr[low] + arr[high] == target)
         {
             cout << arr[low] << " " << arr[high] << endl;
@@ -109,6 +110,7 @@ int ReduceTArrayPairSum(int arr[], int n, int target)
             high--;
         }
     }
+
     if (flag == 0)
     {
         cout << "Not Match Found ";
