@@ -30,6 +30,30 @@ int MaximumPossibleSum(int a[], int n)
     cout << MAX << endl;
 }
 
+int CumulativeSumOFMaximum(int a[], int n)
+{
+    int currentSum[n + 1];
+    currentSum[0] = 0;
+
+    for (int i = 1; i <= n; i++)
+    {
+        currentSum[i] = currentSum[i - 1] + a[i - 1];
+    }
+
+    int maxSum = INT_MIN;
+    for (int i = 0; i <= n; i++)
+    {
+        int sum = 0;
+
+        for (int j = 0; j < i; j++)
+        {
+            sum = currentSum[i] - currentSum[j];
+            maxSum = max(sum, maxSum);
+        }
+    }
+    cout << maxSum;
+}
+
 void PossibleSubArray(int a[], int n)
 {
 
@@ -48,6 +72,10 @@ void PossibleSubArray(int a[], int n)
     }
 }
 
+int ArrayPairSum(int arr, int n, int target)
+{
+}
+
 int main()
 {
 #ifndef RUN
@@ -64,7 +92,8 @@ int main()
         cin >> arr[i];
     }
 
-    MaximumPossibleSum(arr, n);
+    // MaximumPossibleSum(arr, n);
+    // CumulativeSumOFMaximum(arr, n);
 
     // PossibleSubArray(arr, n);
 }
