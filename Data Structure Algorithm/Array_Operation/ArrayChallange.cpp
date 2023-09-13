@@ -171,6 +171,8 @@ int smallestPositiveMissing(int arr[], int n)
 
     // First, we place each positive integer in its correct position in the array.
     // For example, if the number 3 is present, we swap it with nums[2].
+    // cycle-sort algorithm
+
     for (int i = 0; i < n; i++)
     {
         while (arr[i] > 0 && arr[i] <= n &&
