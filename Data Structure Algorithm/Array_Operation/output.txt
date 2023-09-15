@@ -1,8 +1,3 @@
-The original matrix:
-1 2 3 
-7 8 9 
-3 4 5 
-The transposed matrix:
-1 7 3 
-2 8 4 
-3 9 5 
+Resultant matrix after multiplication:
+19 22 
+43 50 
