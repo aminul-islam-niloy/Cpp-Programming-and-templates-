@@ -66,3 +66,19 @@ int main()
 
     return 0;
 }
+
+// input matrix
+//  3 2
+//  2 3
+
+// 1 2
+// 3 4
+// 5 6
+
+// 5 6 7
+// 8 9 1
+
+// Resultant matrix after multiplication:
+// 21 24 9
+// 47 54 25
+// 73 84 41
