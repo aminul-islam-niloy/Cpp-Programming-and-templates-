@@ -21,21 +21,48 @@ int main()
     }
     int flag = 0;
 
-    for (int i = 0; i < n; i++)
+    // for (int i = 0; i < n; i++)
+    // {
+    //     for (int j = 0; j < m; j++)
+    //     {
+    //         if (arr[i][j] == target)
+    //         {
+    //             cout << "Found in ";
+    //             cout << i << " " << j << endl;
+    //             flag = 1;
+    //             break;
+    //         }
+    //     }
+    // }
+    // if (flag == 0)
+    // {
+    //     cout << "Not found  !";
+    // }
+
+    // another approch to find the element in 2d array
+
+    int r = 0, c = m - 1;
+
+    while (r < n && c >= 0)
     {
-        for (int j = 0; j < m; j++)
+        if (arr[r][c] == target)
         {
-            if (arr[i][j] == target)
-            {
-                cout << "Found in ";
-                cout << i << " " << j << endl;
-                flag = 1;
-                break;
-            }
+            cout << r << " " << c << endl;
+            flag = 1;
+            break;
+        }
+        if (arr[r][c] > target)
+        {
+            c--;
+        }
+        else
+        {
+            r++;
         }
     }
+
     if (flag == 0)
     {
-        cout << "Not found  !";
+        cout << "Not found";
     }
 }
