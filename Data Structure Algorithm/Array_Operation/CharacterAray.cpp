@@ -76,11 +76,13 @@ int BiggestWord(string arr)
             {
                 maxlen = current;
             }
-            
-                current = 0;
-            
+            current = 0;
         }
-        current++;
+        else
+        {
+            current++;
+        }
+
         if (arr[i] == '\0')
         {
             break;
