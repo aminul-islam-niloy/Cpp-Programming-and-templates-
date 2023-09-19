@@ -64,6 +64,37 @@ int main()
     //         return false;
     //     }
 
+    // bool searchMatrix(vector<vector<int>> & matrix, int target)
+    // {
+
+    //     if (matrix.empty() || matrix[0].empty())
+    //     {
+    //         return false;
+    //     }
+
+    //     int m = matrix.size();    // Number of rows
+    //     int n = matrix[0].size(); // Number of columns
+    //     int row = 0, col = n - 1; // Start from the top-right corner
+
+    //     while (row < m && col >= 0)
+    //     {
+    //         if (matrix[row][col] == target)
+    //         {
+    //             return true;
+    //         }
+    //         else if (matrix[row][col] > target)
+    //         {
+    //             col--; // Move left in the current row
+    //         }
+    //         else
+    //         {
+    //             row++; // Move down to the next row
+    //         }
+    //     }
+
+    //    // return false;
+    // }
+
     int r = 0, c = m - 1;
 
     while (r < n && c >= 0)
