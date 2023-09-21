@@ -1,0 +1,6 @@
+Before swapint 
+10 20
+before use of pointer: 
+10 20
+after use of pointer 
+20 10
