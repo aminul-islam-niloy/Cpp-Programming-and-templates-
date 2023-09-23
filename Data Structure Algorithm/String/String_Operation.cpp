@@ -54,21 +54,21 @@ string maximumOccurance(string s)
     cout << maxFre << " " << ans << endl;
 }
 
- void reverseString(vector<char>& s) {
-        int left = 0;              
-        int right = s.size() - 1; 
-        
-        while (left < right) {
-        
-            char temp = s[left];
-            s[left] = s[right];
-            s[right] = temp;
-             left++;
-            right--;
-           
-        }
-        
+void reverseString(string s)
+{
+    int left = 0;
+    int right = s.size() - 1;
+
+    while (left < right)
+    {
+
+        char temp = s[left];
+        s[left] = s[right];
+        s[right] = temp;
+        left++;
+        right--;
     }
+}
 
 int main()
 {
