@@ -65,7 +65,7 @@ int main()
     {
         cin >> arr[i];
     }
-   // allPossibleSubArray(arr, n);
+    allPossibleSubArray(arr, n);
    // allPossibleSubString(str);
-    subsetOfSet(arr,n);
+    //subsetOfSet(arr,n);
 }
