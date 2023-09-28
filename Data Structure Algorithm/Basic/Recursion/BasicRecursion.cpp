@@ -3,13 +3,25 @@ using namespace std;
 
 int previousSum(int n)
 {
-    if(n==0)
+    if (n == 0)
     {
         return 0;
     }
 
-    int preSum = previousSum(n-1);
+    int preSum = previousSum(n - 1);
     return n + preSum;
+}
+ 
+int PowerOfP(int n, int p)
+{
+    if (p == 0)
+    {
+        return 1;
+    }
+
+    int pow = PowerOfP(n,p - 1);
+
+    return n * pow;
 }
 
 int main()
@@ -22,6 +34,10 @@ int main()
 
     int n;
     cin >> n;
+    int p; 
+    cin>>p;
 
-    cout << previousSum(n);
+    // cout << previousSum(n);
+
+    cout << PowerOfP(n,p);
 }
