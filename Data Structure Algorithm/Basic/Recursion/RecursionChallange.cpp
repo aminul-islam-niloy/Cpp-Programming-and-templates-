@@ -14,6 +14,17 @@ bool SortedOrNot(int a[], int n)
     return ans;
 }
 
+void DecreasingOrder(int n)
+{
+    if (n == 0)
+    {
+        return;
+    }
+    cout << n << endl;
+
+    DecreasingOrder( n- 1);
+}
+
 int main()
 {
 
@@ -31,5 +42,7 @@ int main()
         cin >> arr[i];
     }
 
-    cout << SortedOrNot(arr, n);
+    // cout << SortedOrNot(arr, n);
+
+    DecreasingOrder(n);
 }
