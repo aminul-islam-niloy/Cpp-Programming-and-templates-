@@ -22,7 +22,54 @@ void DecreasingOrder(int n)
     }
     cout << n << endl;
 
-    DecreasingOrder( n- 1);
+    DecreasingOrder(n - 1);
+}
+
+void IncreasingOrder(int n)
+{
+    if (n == 1)
+    {
+        cout << "1" << endl;
+        return;
+    }
+
+    IncreasingOrder(n - 1);
+    cout << n << endl;
+}
+
+int firstOccurance(int arr[], int n, int i, int key)
+{
+    if (i == n) // if empty
+    {
+        return -1;
+    }
+
+    if (arr[i] == key)
+    {
+        return i;
+    }
+    return firstOccurance(arr, n, i + 1, key);
+}
+
+int lastOccurance(int arr[], int n, int i, int key)
+{
+    if (i == n) // if empty
+    {
+        return -1;
+    }
+
+    int restArray = lastOccurance(arr, n, i + 1, key);
+
+    if (restArray != -1)
+    {
+        return restArray;
+    }
+
+    if (arr[i] == key)
+    {
+        return i;
+    }
+    return -1;
 }
 
 int main()
@@ -44,5 +91,9 @@ int main()
 
     // cout << SortedOrNot(arr, n);
 
-    DecreasingOrder(n);
+    //  DecreasingOrder(n);
+    // IncreasingOrder(n);
+
+   // cout << firstOccurance(arr, n, 0, 2) << endl;
+    cout << lastOccurance(arr, n, 0, 2) << endl;
 }
