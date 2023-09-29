@@ -26,22 +26,24 @@ int PowerOfP(int n, int p)
 
 int factorial(int n)
 {
-    if(n==0)
+    if (n == 0)
     {
         return 1;
     }
 
-    int fact= factorial(n-1);
-    return n *fact ;
+    int fact = factorial(n - 1);
+    return n * fact;
 }
 
-int febonacci(int n){
+int febonacci(int n)
+{
 
-    if(n==0|| n==1){
+    if (n == 0 || n == 1)
+    {
         return n;
     }
 
-    return febonacci(n-1)+ febonacci(n-2);
+    return febonacci(n - 1) + febonacci(n - 2);
 }
 
 int main()
@@ -59,8 +61,8 @@ int main()
 
     // cout << previousSum(n);
 
-   // cout << PowerOfP(n, p);
+    // cout << PowerOfP(n, p);
 
-  // cout<<factorial(n);
-  cout<<febonacci(n);
+    // cout<<factorial(n);
+cout<<febonacci(n);
 }
