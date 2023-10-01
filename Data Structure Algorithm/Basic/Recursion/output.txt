@@ -1,8 +1,1 @@
-
-C
-B
-BC
-A
-AC
-AB
-ABC
+4
