@@ -139,6 +139,47 @@ void reverseRecursion(string s)
     cout << s[0];
 }
 
+void replaceWithReate(string s)
+{
+    if (s.length() == 0)
+    {
+        return;
+    }
+
+    if (s[0] == 'p' && s[1] == 'i')
+    {
+        cout << 3.14;
+        replaceWithReate(s.substr(2));
+    }
+    else
+    {
+        cout << s[0];
+        replaceWithReate(s.substr(1));
+    }
+}
+
+string reverseWords(string s)
+{
+    int start = 0;
+
+    for (int i = 0; i <= s.length(); ++i)
+    {
+        if (i == s.length() || s[i] == ' ')
+        {
+            int end = i - 1;
+            while (start < end)
+            {
+                swap(s[start], s[end]);
+                start++;
+                end--;
+            }
+            // Move start to the next word
+            start = i + 1;
+        }
+    }
+    return s;
+}
+
 int main()
 {
 
@@ -170,13 +211,15 @@ int main()
     // cout << reverseRecursion(2588885);
     // cout << reverseNumber(255, 0);
 
-    string s = "binod";
+    string s = "piand";
     int left = 0;
     int right = s.size() - 1;
-    reverseStringRecursion(s, left, right);
+    //  reverseStringRecursion(s, left, right);
 
-    for (int i = 0; i < s.size(); i++)
-    {
-        cout << s[i];
-    }
+    replaceWithReate(s);
+
+    // for (int i = 0; i < s.size(); i++)
+    // {
+    //     cout << s[i];
+    // }
 }
