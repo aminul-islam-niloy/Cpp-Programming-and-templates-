@@ -1,1 +1,8 @@
-abced
+
+C
+B
+BC
+A
+AC
+AB
+ABC
