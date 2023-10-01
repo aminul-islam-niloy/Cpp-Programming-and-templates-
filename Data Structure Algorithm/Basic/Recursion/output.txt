@@ -1,7 +1,1 @@
-Move form A to C
-Move form A to B
-Move form C to B
-Move form A to C
-Move form B to A
-Move form B to C
-Move form A to C
+abced
