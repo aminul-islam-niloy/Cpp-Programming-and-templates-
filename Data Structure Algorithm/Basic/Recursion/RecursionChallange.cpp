@@ -72,6 +72,73 @@ int lastOccurance(int arr[], int n, int i, int key)
     return -1;
 }
 
+int reverse(int n)
+{
+    int result = 0;
+    while (n > 0)
+    {
+        int last = n % 10;
+        result = result * 10 + last;
+        n = n / 10;
+    }
+    return result;
+}
+
+int reverseNumber(int n, int reversedNum = 0)
+{
+    if (n == 0)
+    {
+        return reversedNum;
+    }
+    else
+    {
+        int lastDigit = n % 10;
+        int remainingDigits = n / 10;
+        reversedNum = reversedNum * 10 + lastDigit;
+
+        return reverseNumber(remainingDigits, reversedNum);
+    }
+}
+
+void reverseString(string s)
+{
+    int left = 0;
+    int right = s.size() - 1;
+
+    while (left < right)
+    {
+        char temp = s[left];
+        s[left] = s[right];
+        s[right] = temp;
+        left++;
+        right--;
+    }
+    cout << s << endl;
+}
+
+void reverseStringRecursion(string &s, int left, int right)
+{
+    if (left < right)
+    {
+        char temp = s[left];
+        s[left] = s[right];
+        s[right] = temp;
+
+        return reverseStringRecursion(s, left + 1, right - 1);
+    }
+}
+
+void reverseRecursion(string s)
+{
+    if (s.length() == 0)
+    {
+        return;
+    }
+    string ros = s.substr(1);
+    reverseRecursion(ros);
+    cout << s[0];
+}
+
 int main()
 {
 
@@ -94,6 +161,22 @@ int main()
     //  DecreasingOrder(n);
     // IncreasingOrder(n);
 
-   // cout << firstOccurance(arr, n, 0, 2) << endl;
-    cout << lastOccurance(arr, n, 0, 2) << endl;
+    // cout << firstOccurance(arr, n, 0, 2) << endl;
+    // cout << lastOccurance(arr, n, 0, 2) << endl;
+
+    //  cout << reverse(255);
+
+    // reverseString("thisisMe");
+    // cout << reverseRecursion(2588885);
+    // cout << reverseNumber(255, 0);
+
+    string s = "binod";
+    int left = 0;
+    int right = s.size() - 1;
+    reverseStringRecursion(s, left, right);
+
+    for (int i = 0; i < s.size(); i++)
+    {
+        cout << s[i];
+    }
 }
