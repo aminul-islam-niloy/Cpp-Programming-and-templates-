@@ -167,9 +167,11 @@ string reverseWords(string s)
         if (i == s.length() || s[i] == ' ')
         {
             int end = i - 1;
+
             while (start < end)
             {
                 swap(s[start], s[end]);
+
                 start++;
                 end--;
             }
