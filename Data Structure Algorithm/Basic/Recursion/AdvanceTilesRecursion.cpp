@@ -16,11 +16,10 @@ int tilingWays(int n)
     return tilingWays(n - 1) + tilingWays(n - 2);
 }
 
-int CaupleorSingle()
+
+// count single or couple 
+string CaupleorSingle(string group)
 {
-    string group;
-    cout << "Enter the group representation (e.g., 'bbgggbbbgg'):" << endl;
-    cin >> group;
 
     int couples = 0;
     int singles = 0;
@@ -71,6 +70,6 @@ int main()
 #endif
     int n;
     cin >> n;
-   // cout << tilingWays(n);
-    cout<<friendsPariing(n);
+    // cout << tilingWays(n);
+    cout << friendsPariing(n);
 }
