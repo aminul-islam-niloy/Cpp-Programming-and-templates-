@@ -16,6 +16,52 @@ int tilingWays(int n)
     return tilingWays(n - 1) + tilingWays(n - 2);
 }
 
+int CaupleorSingle()
+{
+    string group;
+    cout << "Enter the group representation (e.g., 'bbgggbbbgg'):" << endl;
+    cin >> group;
+
+    int couples = 0;
+    int singles = 0;
+
+    int i = 0;
+    while (i < group.length())
+    {
+        if (group[i] == 'b' && group[i + 1] == 'g')
+        {
+            couples++;
+            i += 2; // Skip the couple
+        }
+        else if (group[i] == 'g' && group[i + 1] == 'b')
+        {
+            couples++;
+            i += 2; // Skip the couple
+        }
+        else
+        {
+            singles++;
+            i++; // Move to the next person
+        }
+    }
+
+    cout << "Total couples: " << couples << endl;
+    cout << "Total singles: " << singles << endl;
+
+    return 0;
+}
+
+// possible way to live them single or pair them
+int friendsPariing(int n)
+{
+    if (n == 0 || n == 1 || n == 2)
+    {
+        return n;
+    }
+
+    return friendsPariing(n - 1) + friendsPariing(n - 2) * (n - 1);
+}
+
 int main()
 {
 
@@ -25,5 +71,6 @@ int main()
 #endif
     int n;
     cin >> n;
-    cout << tilingWays(n);
+   // cout << tilingWays(n);
+    cout<<friendsPariing(n);
 }
