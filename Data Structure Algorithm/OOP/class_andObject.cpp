@@ -20,11 +20,17 @@ public:
     {
         cout << cgpa << endl;
     }
-
+    // constructor
     Student(float cg)
     {
         cgpa = cg;
     }
+
+    // copy constructor
+    // Student(Student &a)
+    // {
+    //     name = a.name;
+    // }
 
     void printInfo()
     {
@@ -62,7 +68,6 @@ int main()
     //     student[i].printInfo();
     //     cout << endl;
     // }
-
 
     // using perametirize constructor get and set
     Student a(3.88);
