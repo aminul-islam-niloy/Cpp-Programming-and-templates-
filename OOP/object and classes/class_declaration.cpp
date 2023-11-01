@@ -35,6 +35,8 @@ int main()
        cout << " Cgpa  =  " << aminul.cgpa<< endl;
        cout<< " Department = "<< aminul.dept<< endl;
 
+       
+
     return 0;
 
 }
