@@ -4,6 +4,7 @@
     "initializer_list": "cpp",
     "valarray": "cpp",
     "ostream": "cpp",
-    "cmath": "cpp"
+    "cmath": "cpp",
+    "thread": "cpp"
   }
 }
