@@ -16,14 +16,22 @@ public:
         cgpa = cg;
     }
 
+    void getCgpa()
+    {
+        cout << cgpa << endl;
+    }
+
+    Student(float cg)
+    {
+        cgpa = cg;
+    }
+
     void printInfo()
     {
         cout << "Name =";
         cout << name << endl;
         cout << "Id is= ";
         cout << id << endl;
-        cout << "cgpa is ";
-        cout << cgpa << endl;
         cout << "Department is";
         cout << dept << endl;
         cout << endl;
@@ -33,27 +41,32 @@ public:
 int main()
 {
 
-    Student student[5];
-    float cg;
-    for (int i = 0; i < 2; i++)
-    {
-        cout << "Name is: ";
-        cin >> student[i].name;
-        cout << "Id  is: ";
-        cin >> student[i].id;
-        cout << "cgpa  is: ";
-        cin >> cg;
-        student[i].setCgpa(cg);
-        cout << "Deparment  is: ";
-        cin >> student[i].dept;
-        cout << endl;
-    }
+    // Student student[5];
+    // float cg;
+    // for (int i = 0; i < 2; i++)
+    // {
+    //     cout << "Name is: ";
+    //     cin >> student[i].name;
+    //     cout << "Id  is: ";
+    //     cin >> student[i].id;
+    //     cout << "cgpa  is: ";
+    //     cin >> cg;
+    //     student[i].setCgpa(cg);
+    //     cout << "Deparment  is: ";
+    //     cin >> student[i].dept;
+    //     cout << endl;
+    // }
 
-    for (int i = 0; i < 2; i++)
-    {
-        student[i].printInfo();
-        cout << endl;
-    }
+    // for (int i = 0; i < 2; i++)
+    // {
+    //     student[i].printInfo();
+    //     cout << endl;
+    // }
+
+
+    // using perametirize constructor get and set
+    Student a(3.88);
+    a.getCgpa();
 
     return 0;
 }
