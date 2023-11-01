@@ -3,13 +3,15 @@ using namespace std;
 
 
 class Student{
+    //by default data are private
     public :
          int id;
          float cgpa;
          string dept;
 };
 
-int main(){
+int main()
+{
 
        Student Niloy;
        Niloy.id= 1838;
