@@ -73,5 +73,8 @@ int main()
     Student a(3.88);
     a.getCgpa();
 
+    // copy constructor
+    Student c = a;
+
     return 0;
 }
