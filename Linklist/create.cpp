@@ -48,6 +48,37 @@ void insertIntoHead(node *&head, int val)
     head = n;
 }
 
+void insertIntoMid(node *&head, int pos, int val)
+{
+    node *n = new node(val);
+    if (head == NULL)
+    {
+        head = n;
+        return;
+    }
+
+    node *temp = head;
+
+    if (temp->next == NULL)
+    {
+        temp->next = n;
+        return;
+    }
+
+    // traversing linklist through temp
+    while (temp->next != NULL)
+    {
+        if (temp->data == pos)
+        {
+            n->next = temp->next;
+            temp->next = n;
+            return;
+        }
+        temp = temp->next;
+    }
+}
+
+
 void displayList(node *head)
 {
     node *temp = head;
@@ -83,7 +114,10 @@ int main()
     insertAtTale(head, 4);
 
     insertIntoHead(head, 9);
+    
+    insertIntoMid(head,3,8);
     displayList(head);
+
 
     if (searchList(head, 5))
     {
