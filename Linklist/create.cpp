@@ -79,6 +79,46 @@ void insertIntoMid(node *&head, int pos, int val)
 }
 
 
+void deleteNode(node *&head, int val)
+{
+    if (head == NULL)
+    {
+        cout << "List is empty." << endl;
+        return;
+    }
+
+    // If the node to be deleted is the head
+    if (head->data == val)
+    {
+        node *temp = head;
+        head = head->next;
+        delete temp;
+        return;
+    }
+
+    // Traverse the list to find the node to  deleted
+    node *temp = head;
+    while (temp->next != NULL && temp->next->data != val)
+    {
+        temp = temp->next;
+    }
+
+    // If the node is not found
+    if (temp->next == NULL)
+    {
+        cout << " not found in the list." << endl;
+        return;
+    }
+
+    // Node found, update pointers to skip the node
+    node *toDelete = temp->next;
+    temp->next = temp->next->next;
+
+    // Delete the node
+    delete toDelete;
+}
+
+
 void displayList(node *head)
 {
     node *temp = head;
@@ -113,13 +153,15 @@ int main()
     insertAtTale(head, 3);
     insertAtTale(head, 4);
 
-    insertIntoHead(head, 9);
+   // insertIntoHead(head, 9);
     
-    insertIntoMid(head,3,8);
+    //insertIntoMid(head,3,8);
+
+    deleteNode(head,4);
     displayList(head);
 
 
-    if (searchList(head, 5))
+    if (searchList(head, 3))
     {
         cout << "found";
     }
