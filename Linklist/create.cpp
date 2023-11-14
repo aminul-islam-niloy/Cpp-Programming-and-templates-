@@ -59,15 +59,38 @@ void displayList(node *head)
     cout << "NULL" << endl;
 }
 
+bool searchList(node *head, int key)
+{
+    node *temp = head;
+
+    while (temp != NULL)
+    {
+        if (temp->data == key)
+        {
+            return true;
+        }
+        temp = temp->next;
+    }
+    return false;
+}
+
 int main()
 {
     node *head = NULL;
-    insertAtTale(head,1);
-    insertAtTale(head,2);
-    insertAtTale(head,3);
-    insertAtTale(head,4);
+    insertAtTale(head, 1);
+    insertAtTale(head, 2);
+    insertAtTale(head, 3);
+    insertAtTale(head, 4);
 
-    insertIntoHead(head,9);
-
+    insertIntoHead(head, 9);
     displayList(head);
+
+    if (searchList(head, 5))
+    {
+        cout << "found";
+    }
+    else
+    {
+        cout << "Not found";
+    }
 }
