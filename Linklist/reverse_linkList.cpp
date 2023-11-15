@@ -73,7 +73,33 @@ node *reverseRecursive(node *&head)
     node *newHead = reverseRecursive(head->next);
     head->next->next = head;
     head->next = NULL;
+    
     return newHead;
+}
+
+// reverse k node
+node *reverseK(node *&head, int k)
+{
+    node *prev = NULL;
+    node *curr = head;
+    node *next;
+
+    int count = 0;
+    while (curr != NULL && count < k)
+    {
+        next = curr->next;
+
+        curr->next = prev;
+        prev = curr;
+        curr = next;
+        count++;
+    }
+    if (next != NULL)
+    {
+        head->next = reverseK(next, k);
+    }
+
+    return prev;
 }
 
 int main()
@@ -88,6 +114,6 @@ int main()
     // node *newHead = reverse(head);
     // displayNode(newHead);
 
-    node *newH=reverseRecursive(head);
+    node *newH = reverseRecursive(head);
     displayNode(newH);
 }
